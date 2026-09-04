@@ -1,7 +1,7 @@
 {
   "id": "digitalpot",
   "name": "Digitalpot",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "minAppVersion": "1.4.0",
   "description": "Encrypted secret notes inside Obsidian: password-locked vault view with formatted head/secret/description blocks, key uploads, and activity history.",
   "author": "Anubid",
