@@ -8,7 +8,7 @@ const context = await esbuild.context({
 	banner: {
 		js: "/* Digitalpot - encrypted secret notes for Obsidian */",
 	},
-	entryPoints: ["src/main.ts"],
+	entryPoints: ["main.ts"],
 	bundle: true,
 	external: [
 		"obsidian",
