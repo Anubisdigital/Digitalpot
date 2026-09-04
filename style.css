@@ -1,0 +1,150 @@
+.digitalpot-root {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75em;
+	padding: 0.5em;
+	color: var(--text-normal);
+	background: var(--background-primary);
+}
+
+.digitalpot-toolbar {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+	position: sticky;
+	top: 0;
+	z-index: 5;
+	padding-bottom: 0.5em;
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.digitalpot-dropdown-btn {
+	background: var(--interactive-normal);
+	color: var(--text-normal);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-s, 4px);
+	padding: 0.35em 0.75em;
+	cursor: pointer;
+}
+.digitalpot-dropdown-btn:hover {
+	background: var(--interactive-hover);
+}
+
+.digitalpot-head-badge {
+	font-size: 0.8em;
+	color: var(--text-accent);
+}
+
+.digitalpot-body {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6em;
+}
+
+.digitalpot-block {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.75em;
+	padding: 0.5em 0.75em;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-s, 4px);
+	background: var(--background-secondary);
+	flex-wrap: wrap;
+}
+
+.digitalpot-block-text {
+	word-break: break-word;
+	flex: 1 1 auto;
+	min-width: 0;
+	user-select: text;
+}
+
+.digitalpot-block-secret .digitalpot-block-text {
+	cursor: pointer;
+}
+
+.digitalpot-block-controls {
+	display: flex;
+	gap: 0.4em;
+	flex-shrink: 0;
+}
+
+.digitalpot-block-controls button {
+	font-size: 0.8em;
+	padding: 0.25em 0.6em;
+}
+
+.digitalpot-danger {
+	color: var(--text-error);
+}
+
+.digitalpot-add-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	align-items: flex-start;
+	margin-top: 0.5em;
+}
+
+.digitalpot-input {
+	flex: 1 1 200px;
+	min-height: 2.5em;
+	resize: vertical;
+	background: var(--background-primary-alt);
+	color: var(--text-normal);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-s, 4px);
+	padding: 0.4em;
+}
+
+.digitalpot-type-select {
+	flex: 0 0 auto;
+}
+
+.digitalpot-edit-textarea {
+	width: 100%;
+	min-height: 4em;
+}
+
+.digitalpot-history-panel {
+	margin-top: 1em;
+	padding-top: 0.5em;
+	border-top: 1px solid var(--background-modifier-border);
+	max-height: 40vh;
+	overflow-y: auto;
+}
+.digitalpot-history-panel li {
+	font-size: 0.85em;
+	color: var(--text-muted);
+}
+
+.digitalpot-modal-hint {
+	color: var(--text-muted);
+	font-size: 0.85em;
+}
+.digitalpot-modal-warning {
+	color: var(--text-error);
+}
+
+/* Focus-loss privacy blur (fallback for true screenshot blocking, which no
+   Obsidian plugin can implement — see README). */
+.digitalpot-blurred .digitalpot-body {
+	filter: blur(8px);
+	pointer-events: none;
+	user-select: none;
+}
+
+/* Responsive: stack block controls under text on narrow / mobile widths */
+@media (max-width: 480px) {
+	.digitalpot-block {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.digitalpot-block-controls {
+		justify-content: flex-end;
+	}
+	.digitalpot-add-row {
+		flex-direction: column;
+	}
+}
