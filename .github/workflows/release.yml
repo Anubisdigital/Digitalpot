@@ -24,12 +24,10 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Create release
+      - name: Upload release assets
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           tag="${GITHUB_REF#refs/tags/}"
-          gh release create "$tag" \
-            main.js manifest.json styles.css \
-            --title "$tag" \
-            --notes "Digitalpot $tag"
+          gh release upload "$tag" main.js manifest.json styles.css --clobber || \
+          gh release create "$tag" main.js manifest.json styles.css --title "$tag" --notes "Digitalpot $tag"
